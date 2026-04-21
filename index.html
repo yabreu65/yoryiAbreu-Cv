@@ -1,0 +1,761 @@
+<!doctype html>
+<html class="light" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Yoryi Abreu | CV</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#091426",
+              surface: "#fbf8fa",
+              secondary: "#505f76",
+              "surface-container": "#f0edef",
+              "surface-container-low": "#f5f3f4",
+              "surface-container-high": "#eae7e9",
+              "on-surface": "#1b1b1d",
+              "on-surface-variant": "#45474c",
+              "outline-variant": "#c5c6cd",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              code: ["Space Grotesk", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        vertical-align: middle;
+        font-size: 20px;
+      }
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+        body {
+          background: white !important;
+        }
+        .print-container {
+          max-width: 100% !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          box-shadow: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-surface font-sans text-on-surface antialiased">
+    <header
+      class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/90 backdrop-blur-md shadow-sm no-print"
+    >
+      <div
+        class="max-w-[900px] mx-auto flex items-center justify-between px-6 h-16"
+      >
+        <div
+          class="text-xl font-bold tracking-tighter text-slate-900 uppercase"
+        >
+          Yoryi CV
+        </div>
+        <nav class="hidden md:flex items-center space-x-6">
+          <a
+            class="text-indigo-600 border-b-2 border-indigo-600 pb-1 font-medium transition-colors"
+            href="#experience"
+            >Experiencia</a
+          >
+          <a
+            class="text-slate-500 hover:text-slate-900 transition-colors font-medium"
+            href="#skills"
+            >Skills</a
+          >
+          <a
+            class="text-slate-500 hover:text-slate-900 transition-colors font-medium"
+            href="#projects"
+            >Proyectos</a
+          >
+          <a
+            class="text-slate-500 hover:text-slate-900 transition-colors font-medium"
+            href="#education"
+            >Educación</a
+          >
+        </nav>
+        <button
+          class="bg-primary text-white px-4 py-2 rounded-md font-medium text-sm active:scale-95 transition-transform duration-150"
+          onclick="window.print()"
+        >
+          Descargar PDF
+        </button>
+      </div>
+    </header>
+
+    <main
+      class="max-w-[900px] mx-auto px-6 py-12 bg-white shadow-sm my-8 print-container"
+    >
+      <section
+        class="flex flex-col md:flex-row justify-between items-start gap-8 mb-12"
+      >
+        <div class="flex-1 flex items-start">
+          <div
+            class="h-24 w-24 rounded-2xl bg-gradient-to-br from-indigo-100 to-white border border-slate-200 flex items-center justify-center mr-6 shrink-0 overflow-hidden"
+          >
+            <img
+              alt="Logo de Yoryi Abreu"
+              class="h-full w-full object-cover"
+              src="./logo-yoryi.jpg"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'flex';
+              "
+            />
+            <div
+              class="hidden h-full w-full items-center justify-center text-indigo-600 font-bold text-3xl"
+            >
+              YA
+            </div>
+          </div>
+          <div>
+            <h1 class="text-4xl font-bold tracking-tight text-primary mb-2">
+              Yoryi Abreu Portllo
+            </h1>
+            <p class="text-xl text-indigo-600 mb-4 font-semibold">
+              Full Stack Developer | Backend & AI Integration | SaaS Builder
+            </p>
+            <p class="text-base text-secondary max-w-2xl leading-7">
+              Desarrollador Full Stack con enfoque en backend y arquitectura de
+              sistemas, especializado en la construcción de aplicaciones SaaS y
+              la integración de inteligencia artificial en productos reales.
+              Trabajo con tecnologías como Next.js, Node.js y Python,
+              desarrollando soluciones escalables y diseñando servicios que
+              integran IA para automatización, asistentes y mejora de procesos.
+              Actualmente desarrollo una plataforma SaaS multi-tenant, donde
+              defino la arquitectura del sistema y la integración de
+              inteligencia artificial dentro del flujo del producto.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+        <aside class="md:col-span-4 space-y-10">
+          <div class="space-y-4">
+            <h2
+              class="text-xs font-semibold uppercase tracking-[0.16em] text-on-surface-variant border-b border-outline-variant pb-2"
+            >
+              Contacto
+            </h2>
+            <div class="space-y-3 text-sm">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-indigo-600"
+                  >mail</span
+                >
+                <a class="hover:underline" href="mailto:yoryiabreu@gmail.com"
+                  >yoryiabreu@gmail.com</a
+                >
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-indigo-600"
+                  >call</span
+                >
+                <a class="hover:underline" href="tel:+5491124982489"
+                  >+54 9 11 2498 2489</a
+                >
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-indigo-600"
+                  >location_on</span
+                >
+                <span>CABA, Argentina</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-indigo-600"
+                  >link</span
+                >
+                <a
+                  class="hover:underline break-all"
+                  href="https://github.com/yabreu65"
+                  target="_blank"
+                  rel="noopener"
+                  >github.com/yabreu65</a
+                >
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-indigo-600"
+                  >work</span
+                >
+                <a
+                  class="hover:underline break-all"
+                  href="https://www.linkedin.com/in/yoryi-abreu-92999216b/"
+                  target="_blank"
+                  rel="noopener"
+                  >linkedin.com/in/yoryi-abreu</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <h2
+              class="text-xs font-semibold uppercase tracking-[0.16em] text-on-surface-variant border-b border-outline-variant pb-2"
+            >
+              Stack principal
+            </h2>
+            <div class="flex flex-wrap gap-2">
+              <!-- CORE (más importante) -->
+              <span
+                class="px-3 py-1 bg-indigo-600 text-white font-code text-xs rounded-full"
+                >Node.js</span
+              >
+              <span
+                class="px-3 py-1 bg-indigo-600 text-white font-code text-xs rounded-full"
+                >Next.js</span
+              >
+              <span
+                class="px-3 py-1 bg-indigo-600 text-white font-code text-xs rounded-full"
+                >PostgreSQL</span
+              >
+
+              <!-- SECUNDARIO -->
+              <span
+                class="px-3 py-1 bg-surface-container text-secondary font-code text-xs rounded-full"
+                >TypeScript</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container text-secondary font-code text-xs rounded-full"
+                >React</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container text-secondary font-code text-xs rounded-full"
+                >Python</span
+              >
+
+              <!-- IA / AUTOMATIZACIÓN -->
+              <span
+                class="px-1 py-1 bg-purple-100 text-purple-700 font-code text-xs rounded-full"
+                >OpenAI</span
+              >
+              <span
+                class="px-1 py-1 bg-purple-100 text-purple-700 font-code text-xs rounded-full"
+                >Claude</span
+              >
+              <span
+                class="px-1 py-1 bg-purple-100 text-purple-700 font-code text-xs rounded-full"
+                >n8n</span
+              >
+              <span
+                class="px-1 py-1 bg-purple-100 text-purple-700 font-code text-xs rounded-full"
+                >AI Assistants</span
+              >
+
+              <!-- EXTRA -->
+              <span
+                class="px-3 py-1 bg-surface-container text-secondary font-code text-xs rounded-full"
+                >Tailwind</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container text-secondary font-code text-xs rounded-full"
+                >Docker</span
+              >
+            </div>
+          </div>
+
+          <div class="space-y-4" id="skills">
+            <h2
+              class="text-xs font-semibold uppercase tracking-[0.16em] text-on-surface-variant border-b border-outline-variant pb-2"
+            >
+              Competencias clave
+            </h2>
+            <ul class="space-y-2 text-sm text-secondary leading-6">
+              <li>Arquitectura SaaS multi-tenant y APIs REST</li>
+              <li>Backend con Node.js e integración de servicios</li>
+              <li>IA con OpenAI y Claude (asistentes y automatización)</li>
+              <li>Automatización de flujos con n8n</li>
+              <li>DevOps con Docker, Nginx, PM2 y DigitalOcean</li>
+              <li>Scrum y gestión ágil con ClickUp</li>
+            </ul>
+          </div>
+
+          <div class="space-y-4">
+            <h2
+              class="text-xs font-semibold uppercase tracking-[0.16em] text-on-surface-variant border-b border-outline-variant pb-2"
+            >
+              Idiomas
+            </h2>
+            <ul class="space-y-2 text-sm">
+              <li>Español — Nativo</li>
+              <li>Inglés — Básico</li>
+            </ul>
+          </div>
+
+          <div class="space-y-4">
+            <h2
+              class="text-xs font-semibold uppercase tracking-[0.16em] text-on-surface-variant border-b border-outline-variant pb-2"
+            >
+              Educación y certificaciones
+            </h2>
+            <div class="space-y-4 text-sm text-secondary">
+              <div>
+                <div class="font-semibold text-on-surface">
+                  Ingeniero en Electrónica
+                </div>
+                <div>Instituto Universitario Politécnico Santiago Mariño</div>
+              </div>
+              <div>
+                <div class="font-semibold text-on-surface">
+                  Técnico Superior en Electricidad
+                </div>
+                <div>Instituto Universitario Isaac Newton</div>
+              </div>
+              <div>
+                <div class="font-semibold text-on-surface">Certificaciones</div>
+                <ul class="mt-2 space-y-2 text-sm text-secondary leading-6">
+                  <li>
+                    Asertividad en los Negocios — Gerencia Corporativa de
+                    Formación CANTV
+                  </li>
+                  <li>Conciliación de Conflictos — MADI Consulting</li>
+                  <li>Gestión de Calidad Supervisoria — MADI Consulting</li>
+                  <li>Project Management — MADI Consulting</li>
+                  <li>
+                    Taller de Liderazgo — Organización Scheiner, Ferrera & As.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <div class="md:col-span-8 space-y-16">
+          <section>
+            <h2
+              class="text-2xl font-semibold text-primary mb-6 flex items-center gap-3"
+            >
+              <span class="material-symbols-outlined text-indigo-600"
+                >badge</span
+              >
+              Perfil
+            </h2>
+            <div class="rounded-2xl bg-slate-50 border border-slate-200 p-6">
+              <p class="text-sm leading-7 text-secondary">
+                Desarrollador Full Stack con enfoque en backend y arquitectura
+                de sistemas. Actualmente desarrollo una plataforma SaaS
+                multi-tenant, definiendo la arquitectura del sistema y cómo la
+                inteligencia artificial se integra dentro del flujo del
+                producto. Combino experiencia en liderazgo y gestión con
+                habilidades técnicas para construir sistemas eficientes,
+                robustos y orientados a resultados.
+              </p>
+            </div>
+          </section>
+
+          <section class="scroll-mt-24" id="experience">
+            <h2
+              class="text-2xl font-semibold text-primary mb-6 flex items-center gap-3"
+            >
+              <span class="material-symbols-outlined text-indigo-600"
+                >work</span
+              >
+              Experiencia
+            </h2>
+            <div class="space-y-10">
+              <div class="border-l-2 border-indigo-600 pl-6 relative">
+                <div
+                  class="absolute -left-[9px] top-1 w-4 h-4 bg-white border-2 border-indigo-600 rounded-full"
+                ></div>
+                <div
+                  class="flex flex-col md:flex-row md:items-center justify-between mb-2"
+                >
+                  <h3 class="text-lg font-semibold text-primary">
+                    Full Stack Developer — DATAKI.CO
+                  </h3>
+                  <span
+                    class="font-code text-xs text-secondary bg-surface-container-low px-2 py-0.5 rounded"
+                    >2023 — 2026</span
+                  >
+                </div>
+                <div class="text-indigo-600 font-medium mb-4">
+                  Freelance / Proyectos para marcas de gran alcance
+                </div>
+                <ul
+                  class="space-y-3 text-sm text-secondary list-disc ml-4 leading-7"
+                >
+                  <li>
+                    Desarrollo de aplicaciones web full stack para clientes
+                    internacionales, participando en el diseño de soluciones y
+                    en la arquitectura del frontend y backend.
+                  </li>
+                  <li>
+                    Implementación de interfaces modernas con React y Angular,
+                    optimizando rendimiento, usabilidad y experiencia de usuario
+                    en entornos de alta exigencia.
+                  </li>
+                  <li>
+                    Mantenimiento evolutivo y correctivo de plataformas
+                    digitales, asegurando estabilidad, escalabilidad y
+                    cumplimiento de estándares para marcas como Oreo, Glade y
+                    Cinépolis.
+                  </li>
+                </ul>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500"
+                    >Angular</span
+                  >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500"
+                    >React</span
+                  >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500"
+                    >JavaScript</span
+                  >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500"
+                    >APIs REST</span
+                  >
+                </div>
+              </div>
+
+              <div class="border-l-2 border-slate-200 pl-6 relative">
+                <div
+                  class="absolute -left-[5px] top-1 w-2 h-2 bg-slate-300 rounded-full"
+                ></div>
+                <div
+                  class="flex flex-col md:flex-row md:items-center justify-between mb-2"
+                >
+                  <h3 class="text-lg font-semibold text-primary">
+                    Frontend Developer — Realty Candy
+                  </h3>
+                  <span
+                    class="font-code text-xs text-secondary bg-surface-container-low px-2 py-0.5 rounded"
+                    >2021 — 2023</span
+                  >
+                </div>
+                <div class="text-indigo-600 font-medium mb-4">
+                  Mercado inmobiliario USA
+                </div>
+                <ul
+                  class="space-y-3 text-sm text-secondary list-disc ml-4 leading-7"
+                >
+                  <li>
+                    Desarrollo de plataformas web para el sector inmobiliario en
+                    el mercado estadounidense, utilizando WordPress y PHP con
+                    integración de IDX Broker.
+                  </li>
+                  <li>
+                    Implementación de funcionalidades personalizadas y
+                    optimización de rendimiento y experiencia móvil, mejorando
+                    la usabilidad y tiempos de carga.
+                  </li>
+                  <li>
+                    Aplicación de estándares de accesibilidad (ADA) y
+                    mantenimiento evolutivo y correctivo, asegurando estabilidad
+                    y continuidad operativa.
+                  </li>
+                </ul>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500"
+                    >WordPress</span
+                  >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500"
+                    >PHP</span
+                  >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500"
+                    >IDX Broker</span
+                  >
+                </div>
+              </div>
+
+              <div class="border-l-2 border-slate-200 pl-6 relative">
+                <div
+                  class="absolute -left-[5px] top-1 w-2 h-2 bg-slate-300 rounded-full"
+                ></div>
+                <div
+                  class="flex flex-col md:flex-row md:items-center justify-between mb-2"
+                >
+                  <h3 class="text-lg font-semibold text-primary">
+                    WordPress / Frontend Developer — Nonadesign & BH Software
+                  </h3>
+                  <span
+                    class="font-code text-xs text-secondary bg-surface-container-low px-2 py-0.5 rounded"
+                    >2020 — 2019</span
+                  >
+                </div>
+                <div class="text-indigo-600 font-medium mb-4">
+                  Desarrollo web freelance y a medida
+                </div>
+                <ul
+                  class="space-y-3 text-sm text-secondary list-disc ml-4 leading-7"
+                >
+                  <li>
+                    Personalización de themes WordPress, integraciones en PHP y
+                    desarrollo responsive con Sass, Flexbox, Grid y Bootstrap.
+                  </li>
+                  <li>
+                    Consumo y creación de APIs REST en Node.js y PHP, con
+                    soporte sobre bases de datos MySQL.
+                  </li>
+                  <li>
+                    Trabajo colaborativo con Git y desarrollo de componentes
+                    interactivos con JavaScript y React.
+                  </li>
+                </ul>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500"
+                    >PHP</span
+                  >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500"
+                    >Node.js</span
+                  >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500"
+                    >MySQL</span
+                  >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500"
+                    >WordPress</span
+                  >
+                </div>
+              </div>
+
+              <div class="border-l-2 border-slate-200 pl-6 relative">
+                <div
+                  class="absolute -left-[5px] top-1 w-2 h-2 bg-slate-300 rounded-full"
+                ></div>
+                <div
+                  class="flex flex-col md:flex-row md:items-center justify-between mb-2"
+                >
+                  <h3 class="text-lg font-semibold text-primary">
+                    Gerente Regional de Operaciones — MOVILNET
+                  </h3>
+                  <span
+                    class="font-code text-xs text-secondary bg-surface-container-low px-2 py-0.5 rounded"
+                    >1993 — 2018</span
+                  >
+                </div>
+                <div class="text-indigo-600 font-medium mb-4">
+                  Operaciones regionales en telecomunicaciones
+                </div>
+                <ul
+                  class="space-y-3 text-sm text-secondary list-disc ml-4 leading-7"
+                >
+                  <li>
+                    Gestión integral de recursos y coordinación de equipos
+                    técnicos, asegurando la continuidad operativa en entornos de
+                    alta exigencia y gran escala.
+                  </li>
+                  <li>
+                    Dirección de proyectos estratégicos, definiendo prioridades
+                    y planes de ejecución alineados a objetivos de calidad,
+                    eficiencia y rendimiento.
+                  </li>
+                  <li>
+                    Supervisión de equipos multidisciplinarios, impulsando el
+                    cumplimiento de metas operativas y la mejora continua de
+                    productividad.
+                  </li>
+                  <li>
+                    Optimización de procesos y recursos humanos y técnicos,
+                    fortaleciendo estrategias de mantenimiento preventivo,
+                    correctivo y predictivo en redes.
+                  </li>
+                  <li>
+                    Toma de decisiones estratégicas orientadas a resultados,
+                    manteniendo altos niveles de eficiencia operativa y
+                    satisfacción de clientes y equipos.
+                  </li>
+                </ul>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500"
+                    >Liderazgo</span
+                  >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500"
+                    >Gestión Operativa</span
+                  >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500"
+                    >Telecomunicaciones</span
+                  >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500"
+                    >Mantenimiento de Redes</span
+                  >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-wider text-slate-500"
+                    >Mejora Continua</span
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="scroll-mt-24" id="projects">
+            <h2
+              class="text-2xl font-semibold text-primary mb-6 flex items-center gap-3"
+            >
+              <span class="material-symbols-outlined text-indigo-600"
+                >deployed_code</span
+              >
+              Proyectos destacados
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div
+                class="group border border-slate-200 p-5 hover:border-indigo-600 transition-colors rounded-xl"
+              >
+                <h3 class="text-lg font-semibold text-primary mb-2">
+                  BuildingOS / SaaS de gestión de condominios
+                </h3>
+                <p class="text-sm text-secondary mb-4 leading-7">
+                  Plataforma SaaS multi-tenant para administración de edificios
+                  y condominios, con módulos de pagos, unidades, comunicación e
+                  integración de asistentes con IA.
+                </p>
+                <div class="flex gap-3 flex-wrap">
+                  <span class="font-code text-[11px] text-indigo-600"
+                    >Next.js</span
+                  >
+                  <span class="font-code text-[11px] text-indigo-600"
+                    >Node.js</span
+                  >
+                  <span class="font-code text-[11px] text-indigo-600"
+                    >PostgreSQL</span
+                  >
+                  <span class="font-code text-[11px] text-indigo-600">IA</span>
+                </div>
+              </div>
+
+              <div
+                class="group border border-slate-200 p-5 hover:border-indigo-600 transition-colors rounded-xl"
+              >
+                <h3 class="text-lg font-semibold text-primary mb-2">
+                  AI SEO Tools
+                </h3>
+                <p class="text-sm text-secondary mb-4 leading-7">
+                  Suite de herramientas SEO con IA, incluyendo renombrador
+                  inteligente de imágenes, generación de títulos y descripciones
+                  y módulos de automatización.
+                </p>
+                <div class="flex gap-3 flex-wrap">
+                  <span class="font-code text-[11px] text-indigo-600"
+                    >React</span
+                  >
+                  <span class="font-code text-[11px] text-indigo-600"
+                    >Node.js</span
+                  >
+                  <span class="font-code text-[11px] text-indigo-600"
+                    >OpenAI</span
+                  >
+                  <span class="font-code text-[11px] text-indigo-600">n8n</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="scroll-mt-24" id="education">
+            <h2
+              class="text-2xl font-semibold text-primary mb-6 flex items-center gap-3"
+            >
+              <span class="material-symbols-outlined text-indigo-600"
+                >school</span
+              >
+              Educación
+            </h2>
+            <div class="space-y-6">
+              <div class="flex flex-col md:flex-row justify-between">
+                <div>
+                  <h3 class="text-lg font-semibold text-primary">
+                    Ingeniero en Electrónica
+                  </h3>
+                  <div class="text-secondary">
+                    Instituto Universitario Politécnico Santiago Mariño
+                  </div>
+                </div>
+                <span class="font-code text-xs text-secondary mt-1 md:mt-0"
+                  >2003 — 2007</span
+                >
+              </div>
+              <div class="flex flex-col md:flex-row justify-between">
+                <div>
+                  <h3 class="text-lg font-semibold text-primary">
+                    Técnico Superior en Electricidad
+                  </h3>
+                  <div class="text-secondary">
+                    Instituto Universitario Isaac Newton
+                  </div>
+                </div>
+                <span class="font-code text-xs text-secondary mt-1 md:mt-0"
+                  >1990 — 1993</span
+                >
+              </div>
+              <div class="p-4 bg-slate-50 border-l-4 border-slate-200">
+                <p class="text-sm text-slate-600 italic">
+                  Formación complementaria en liderazgo, gestión de equipos,
+                  resolución de conflictos y project management.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="w-full border-t border-slate-200 mt-16 bg-slate-50 no-print">
+      <div
+        class="max-w-[900px] mx-auto py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-4"
+      >
+        <p class="text-sm font-medium text-slate-500">
+          © 2026 Yoryi Abreu. CV profesional.
+        </p>
+        <div class="flex gap-6">
+          <a
+            class="text-slate-500 hover:text-indigo-600 transition-colors"
+            href="https://www.linkedin.com/in/yoryi-abreu-92999216b/"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+          <a
+            class="text-slate-500 hover:text-indigo-600 transition-colors"
+            href="https://github.com/yabreu65"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+          <a
+            class="text-slate-500 hover:text-indigo-600 transition-colors"
+            href="mailto:yoryiabreu@gmail.com"
+            >Email</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
