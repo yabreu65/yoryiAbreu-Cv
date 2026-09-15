@@ -5,14 +5,13 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta id="meta-description" name="description"
-    content="CV de Yoryi Abreu Portillo, Full Stack Developer con foco en backend, arquitectura SaaS e integración de IA." />
-  <title>Yoryi Abreu Portillo | CV</title>
+    content="CV de Yoryi Abreu Portillo, Full Stack Developer con JavaScript, TypeScript, Node.js, Python, PostgreSQL, SaaS e integración de IA." />
+  <title>Yoryi Abreu Portillo | Full Stack Developer Node.js, JavaScript/TypeScript, Python, SaaS & AI-Assisted Development</title>
 
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500&display=swap"
     rel="stylesheet" />
@@ -40,20 +39,16 @@
           },
           fontFamily: {
             sans: ["Inter", "sans-serif"],
-            code: ["Space Grotesk", "monospace"],
-          },
-        },
-      },
+            code: ["Space Grotesk", "monospace"]
+          }
+        }
+      }
     };
   </script>
 
   <style>
     .material-symbols-outlined {
-      font-variation-settings:
-        "FILL" 0,
-        "wght" 400,
-        "GRAD" 0,
-        "opsz" 24;
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
       vertical-align: middle;
       font-size: 20px;
     }
@@ -64,17 +59,19 @@
 
     @page {
       size: A4;
-      margin: 12mm;
+      margin: 11mm;
     }
 
     @media print {
-      .no-print {
-        display: none !important;
+      html,
+      body {
+        background: #fff !important;
+        color: #111827 !important;
+        font-size: 11px;
       }
 
-      body {
-        background: white !important;
-        color: #111827 !important;
+      .no-print {
+        display: none !important;
       }
 
       .print-container {
@@ -84,16 +81,35 @@
         box-shadow: none !important;
       }
 
-      section,
       article,
       .avoid-break {
         break-inside: avoid;
         page-break-inside: avoid;
       }
 
+      h1,
+      h2,
+      h3 {
+        break-after: avoid;
+      }
+
       a {
         color: inherit !important;
         text-decoration: none !important;
+      }
+
+      .print-grid {
+        grid-template-columns: 32% 1fr !important;
+        gap: 24px !important;
+      }
+
+      .print-grid > * {
+        grid-column: auto !important;
+        min-width: 0;
+      }
+
+      .print-compact {
+        margin-bottom: 1rem !important;
       }
     }
   </style>
@@ -101,24 +117,14 @@
 
 <body class="bg-surface font-sans text-on-surface antialiased">
   <header class="sticky top-0 z-50 w-full border-b border-outline-variant bg-white/95 shadow-sm backdrop-blur-md no-print">
-    <div class="mx-auto flex h-16 max-w-[900px] items-center justify-between px-6">
-      <div class="text-xl font-bold uppercase tracking-tighter text-primary">
-        Yoryi CV
-      </div>
+    <div class="mx-auto flex h-16 max-w-[960px] items-center justify-between px-6">
+      <div class="text-xl font-bold uppercase tracking-tighter text-primary">Yoryi CV</div>
 
-      <nav class="hidden items-center space-x-6 md:flex" aria-label="Navegación principal">
-        <a class="font-medium text-secondary transition-colors hover:text-primary" href="#experience" data-i18n="nav.experience">
-          Experiencia
-        </a>
-        <a class="font-medium text-secondary transition-colors hover:text-primary" href="#skills" data-i18n="nav.skills">
-          Skills
-        </a>
-        <a class="font-medium text-secondary transition-colors hover:text-primary" href="#projects" data-i18n="nav.projects">
-          Proyectos
-        </a>
-        <a class="font-medium text-secondary transition-colors hover:text-primary" href="#education" data-i18n="nav.education">
-          Educación
-        </a>
+      <nav id="main-nav" class="hidden items-center space-x-6 md:flex" aria-label="Navegación principal">
+        <a class="font-medium text-secondary transition-colors hover:text-primary" href="#experience" data-i18n="nav.experience">Experiencia</a>
+        <a class="font-medium text-secondary transition-colors hover:text-primary" href="#skills" data-i18n="nav.skills">Skills</a>
+        <a class="font-medium text-secondary transition-colors hover:text-primary" href="#projects" data-i18n="nav.projects">Proyectos</a>
+        <a class="font-medium text-secondary transition-colors hover:text-primary" href="#education" data-i18n="nav.education">Educación</a>
       </nav>
 
       <div class="flex items-center gap-2">
@@ -127,500 +133,210 @@
           type="button" aria-label="Switch language">EN</button>
         <button id="print-button"
           class="rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition-transform duration-150 active:scale-95"
-          type="button" onclick="window.print()" data-i18n="actions.downloadPdf">
-          Descargar PDF
-        </button>
+          type="button" onclick="window.print()" data-i18n="actions.downloadPdf">Descargar PDF</button>
       </div>
     </div>
   </header>
 
-  <main class="print-container mx-auto my-8 max-w-[900px] bg-white px-6 py-12 shadow-sm">
-    <section class="mb-12 flex flex-col items-start justify-between gap-8 md:flex-row">
-      <div class="flex flex-1 items-start">
-        <div
-          class="mr-6 flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-outline-variant bg-gradient-to-br from-ai-soft to-white">
-          <img alt="Logo de Yoryi Abreu" class="h-full w-full object-cover" src="./logo-yoryi.jpg" onerror="
-                this.style.display = 'none';
-                this.nextElementSibling.style.display = 'flex';
-              " />
-          <div class="hidden h-full w-full items-center justify-center text-3xl font-bold text-accent">
-            YA
-          </div>
-        </div>
+  <main class="print-container mx-auto my-8 max-w-[960px] bg-white px-6 py-10 shadow-sm">
+    <section class="print-compact mb-10 flex flex-col items-start gap-8 md:flex-row">
+      <div
+        class="flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-outline-variant bg-gradient-to-br from-ai-soft to-white">
+        <img id="profile-logo" alt="Logo de Yoryi Abreu" class="h-full w-full object-cover" src="./logo-yoryi.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="hidden h-full w-full items-center justify-center text-3xl font-bold text-accent">YA</div>
+      </div>
 
-        <div>
-          <h1 class="mb-2 text-4xl font-bold tracking-tight text-primary">
-            Yoryi Abreu Portillo
-          </h1>
-
-          <p class="mb-4 text-xl font-semibold text-accent" data-i18n="hero.title">
-            Full Stack Developer | Backend, SaaS Multi-Tenant & AI Integration
-          </p>
-
-          <p class="max-w-2xl text-base leading-7 text-secondary" data-i18n="hero.summary">
-            Desarrollador Full Stack con foco en backend, arquitectura SaaS e
-            integración de inteligencia artificial en productos reales.
-            Trabajo con Node.js, Next.js, React, TypeScript, PostgreSQL,
-            Python y Docker, construyendo APIs, servicios backend y
-            plataformas multi-tenant. Actualmente desarrollo BuildingOS, una
-            plataforma SaaS donde diseño módulos de negocio, estructura de
-            datos, permisos, aislamiento multi-tenant e integración de
-            asistentes IA dentro del flujo del producto.
-          </p>
-        </div>
+      <div class="flex-1">
+        <p class="mb-2 font-code text-xs uppercase tracking-[0.18em] text-secondary" data-i18n="hero.kicker">Full Stack · Backend · SaaS · AI-enabled engineering</p>
+        <h1 class="mb-2 text-4xl font-bold tracking-tight text-primary">Yoryi Abreu Portillo</h1>
+        <p class="mb-4 text-xl font-semibold text-accent" data-i18n="hero.title">Full Stack Developer | Node.js, JavaScript/TypeScript, Python, SaaS & AI-Assisted Development</p>
+        <p class="max-w-3xl text-base leading-7 text-secondary" data-i18n="hero.summary">
+          Ingeniero en Electrónica y Full Stack Developer enfocado en JavaScript, TypeScript, Node.js, backend, PostgreSQL y plataformas SaaS. Construyo APIs REST, módulos de negocio, interfaces web y flujos con IA; uso Python de forma práctica para automatización, scripting, procesamiento y tareas relacionadas con IA.
+        </p>
       </div>
     </section>
 
-    <div class="grid grid-cols-1 gap-12 md:grid-cols-12">
-      <aside class="space-y-10 md:col-span-4">
+    <div class="print-grid grid grid-cols-1 gap-10 md:grid-cols-12">
+      <aside class="space-y-8 md:col-span-4">
         <section class="space-y-4">
-          <h2
-            class="border-b border-outline-variant pb-2 text-xs font-semibold uppercase tracking-[0.16em] text-on-surface-variant" data-i18n="sections.contact">
-            Contacto
-          </h2>
-
+          <h2 class="border-b border-outline-variant pb-2 text-xs font-semibold uppercase tracking-[0.16em] text-on-surface-variant" data-i18n="sections.contact">Contacto</h2>
           <div class="space-y-3 text-sm">
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-accent">mail</span>
-              <a class="hover:underline" href="mailto:yoryiabreu@gmail.com">yoryiabreu@gmail.com</a>
-            </div>
-
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-accent">call</span>
-              <a class="hover:underline" href="tel:+5491124982489">+54 9 11 2498 2489</a>
-            </div>
-
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-accent">location_on</span>
-              <span>CABA, Argentina</span>
-            </div>
-
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-accent">link</span>
-              <a class="break-all hover:underline" href="https://github.com/yabreu65" target="_blank" rel="noopener">
-                github.com/yabreu65
-              </a>
-            </div>
-
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-accent">work</span>
-              <a class="break-all hover:underline" href="https://www.linkedin.com/in/yoryi-abreu-92999216b/"
-                target="_blank" rel="noopener">
-                linkedin.com/in/yoryi-abreu
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <section class="space-y-4">
-          <h2
-            class="border-b border-outline-variant pb-2 text-xs font-semibold uppercase tracking-[0.16em] text-on-surface-variant" data-i18n="sections.stack">
-            Stack principal
-          </h2>
-
-          <div class="flex flex-wrap gap-2">
-            <span class="rounded-full bg-accent px-3 py-1 font-code text-xs text-white">Node.js</span>
-            <span class="rounded-full bg-accent px-3 py-1 font-code text-xs text-white">NestJS</span>
-            <span class="rounded-full bg-accent px-3 py-1 font-code text-xs text-white">PostgreSQL</span>
-            <span class="rounded-full bg-accent px-3 py-1 font-code text-xs text-white">TypeScript</span>
-
-            <span class="rounded-full bg-surface-container-low px-3 py-1 font-code text-xs text-secondary">Next.js</span>
-            <span class="rounded-full bg-surface-container-low px-3 py-1 font-code text-xs text-secondary">React</span>
-            <span class="rounded-full bg-surface-container-low px-3 py-1 font-code text-xs text-secondary">Prisma</span>
-            <span class="rounded-full bg-surface-container-low px-3 py-1 font-code text-xs text-secondary">Python</span>
-            <span class="rounded-full bg-surface-container-low px-3 py-1 font-code text-xs text-secondary">Docker</span>
-            <span class="rounded-full bg-surface-container-low px-3 py-1 font-code text-xs text-secondary">Nginx</span>
-
-            <span class="rounded-full bg-ai-soft px-3 py-1 font-code text-xs text-ai-text">OpenAI</span>
-            <span class="rounded-full bg-ai-soft px-3 py-1 font-code text-xs text-ai-text">Claude</span>
-            <span class="rounded-full bg-ai-soft px-3 py-1 font-code text-xs text-ai-text">AI Assistants</span>
-            <span class="rounded-full bg-ai-soft px-3 py-1 font-code text-xs text-ai-text">n8n</span>
+            <div class="flex items-center gap-3"><span class="material-symbols-outlined text-accent">mail</span><a class="hover:underline" href="mailto:yoryiabreu@gmail.com">yoryiabreu@gmail.com</a></div>
+            <div class="flex items-center gap-3"><span class="material-symbols-outlined text-accent">call</span><a class="hover:underline" href="tel:+5491124982489">+54 9 11 2498 2489</a></div>
+            <div class="flex items-center gap-3"><span class="material-symbols-outlined text-accent">location_on</span><span>CABA, Argentina</span></div>
+            <div class="flex items-center gap-3"><span class="material-symbols-outlined text-accent">link</span><a class="break-all hover:underline" href="https://github.com/yabreu65" target="_blank" rel="noopener">github.com/yabreu65</a></div>
+            <div class="flex items-center gap-3"><span class="material-symbols-outlined text-accent">work</span><a class="break-all hover:underline" href="https://www.linkedin.com/in/yoryi-abreu-92999216b/" target="_blank" rel="noopener">linkedin.com/in/yoryi-abreu</a></div>
           </div>
         </section>
 
         <section class="space-y-4" id="skills">
-          <h2
-            class="border-b border-outline-variant pb-2 text-xs font-semibold uppercase tracking-[0.16em] text-on-surface-variant" data-i18n="sections.competencies">
-            Competencias clave
-          </h2>
-
-          <ul class="space-y-2 text-sm leading-6 text-secondary">
-            <li data-i18n="competencies.1">Arquitectura SaaS multi-tenant, APIs REST y sistemas escalables.</li>
-            <li data-i18n="competencies.2">Backend con Node.js/NestJS, Prisma y PostgreSQL.</li>
-            <li data-i18n="competencies.3">Diseño de módulos, permisos, roles y aislamiento de datos.</li>
-            <li data-i18n="competencies.4">Integración de IA con LLMs, asistentes y automatización.</li>
-            <li data-i18n="competencies.5">DevOps práctico con Docker, Nginx, PM2 y DigitalOcean; actualmente profundizando AWS/ECS-Fargate.</li>
-            <li data-i18n="competencies.6">Optimización de rendimiento web, UX y mantenimiento evolutivo.</li>
-            <li data-i18n="competencies.7">Liderazgo técnico, gestión operativa y trabajo con equipos.</li>
-          </ul>
+          <h2 class="border-b border-outline-variant pb-2 text-xs font-semibold uppercase tracking-[0.16em] text-on-surface-variant" data-i18n="sections.skills">Skills técnicos</h2>
+          <div class="space-y-4 text-sm leading-6 text-secondary">
+            <div>
+              <h3 class="font-semibold text-primary" data-i18n="skills.languages.title">Lenguajes</h3>
+              <p>JavaScript · TypeScript · Python · PHP · HTML · CSS</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-primary" data-i18n="skills.backend.title">Backend</h3>
+              <p>Node.js · NestJS · Express · REST APIs · Prisma</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-primary" data-i18n="skills.frontend.title">Frontend</h3>
+              <p>React · Next.js · Angular · Vue · Tailwind</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-primary" data-i18n="skills.data.title">Datos</h3>
+              <p>PostgreSQL · MySQL · Redis · SQLite</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-primary" data-i18n="skills.devops.title">DevOps e infraestructura</h3>
+              <p>Docker · Docker Compose · Linux · Git · GitHub · GitHub Actions · CI/CD · Nginx · Traefik · PM2 · DigitalOcean · VPS · MinIO/S3-compatible storage</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-primary" data-i18n="skills.ai.title">AI & Automation</h3>
+              <p>OpenAI · ChatGPT · Codex · OpenCode · Gentle AI · Gentle Pi · Ollama · LM Studio · n8n · LLMs · AI Agents</p>
+            </div>
+          </div>
         </section>
 
         <section class="space-y-4">
-          <h2
-            class="border-b border-outline-variant pb-2 text-xs font-semibold uppercase tracking-[0.16em] text-on-surface-variant" data-i18n="sections.languages">
-            Idiomas
-          </h2>
-
+          <h2 class="border-b border-outline-variant pb-2 text-xs font-semibold uppercase tracking-[0.16em] text-on-surface-variant" data-i18n="sections.languages">Idiomas</h2>
           <ul class="space-y-2 text-sm">
             <li data-i18n="languages.spanish">Español — Nativo</li>
             <li data-i18n="languages.english">Inglés — Técnico básico / lectura de documentación</li>
           </ul>
         </section>
 
-        <section class="space-y-4">
-          <h2
-            class="border-b border-outline-variant pb-2 text-xs font-semibold uppercase tracking-[0.16em] text-on-surface-variant" data-i18n="sections.educationCerts">
-            Educación y certificaciones
-          </h2>
-
+        <section class="space-y-4" id="education">
+          <h2 class="border-b border-outline-variant pb-2 text-xs font-semibold uppercase tracking-[0.16em] text-on-surface-variant" data-i18n="sections.education">Educación</h2>
           <div class="space-y-4 text-sm text-secondary">
             <div>
-              <div class="font-semibold text-on-surface"><span data-i18n="education.degree1">Ingeniero en Electrónica</span></div>
+              <div class="font-semibold text-on-surface" data-i18n="education.degree1">Ingeniero en Electrónica</div>
               <div>Instituto Universitario Politécnico Santiago Mariño</div>
+              <div class="font-code text-xs">2003 — 2007</div>
             </div>
-
             <div>
-              <div class="font-semibold text-on-surface"><span data-i18n="education.degree2">Técnico Superior en Electricidad</span></div>
+              <div class="font-semibold text-on-surface" data-i18n="education.degree2">Técnico Superior en Electricidad</div>
               <div>Instituto Universitario Isaac Newton</div>
+              <div class="font-code text-xs">1990 — 1993</div>
             </div>
-
             <div>
               <div class="font-semibold text-on-surface" data-i18n="education.complementary">Formación complementaria</div>
-              <ul class="mt-2 space-y-2 text-sm leading-6 text-secondary">
-                <li><span data-i18n="education.cert1">Project Management — MADI Consulting</span></li>
-                <li><span data-i18n="education.cert2">Gestión de Calidad Supervisoria — MADI Consulting</span></li>
-                <li><span data-i18n="education.cert3">Conciliación de Conflictos — MADI Consulting</span></li>
-                <li><span data-i18n="education.cert4">Asertividad en los Negocios — Gerencia Corporativa de Formación CANTV</span></li>
-                <li><span data-i18n="education.cert5">Taller de Liderazgo — Organización Scheiner, Ferrera &amp; As.</span></li>
-              </ul>
+              <p class="mt-1" data-i18n="education.note">Project Management y gestión de calidad supervisoria — MADI Consulting; conciliación de conflictos — MADI Consulting; asertividad en los negocios — Gerencia Corporativa de Formación CANTV; liderazgo — Organización Scheiner, Ferrera &amp; As.</p>
             </div>
           </div>
         </section>
       </aside>
 
-      <div class="space-y-16 md:col-span-8">
+      <div class="space-y-12 md:col-span-8">
         <section class="avoid-break">
-          <h2 class="mb-6 flex items-center gap-3 text-2xl font-semibold text-primary">
-            <span class="material-symbols-outlined text-accent">badge</span>
-            <span data-i18n="sections.profile">Perfil</span>
-          </h2>
-
-          <div class="rounded-2xl border border-outline-variant bg-surface-container-low p-6">
-            <p class="text-sm leading-7 text-secondary" data-i18n="profile.summary">
-              Desarrollador Full Stack con enfoque backend y visión de
-              producto. Combino experiencia en desarrollo web, arquitectura
-              SaaS multi-tenant, integración de IA y liderazgo operativo en
-              entornos críticos. Me especializo en construir soluciones
-              mantenibles, modulares y orientadas a resultados, conectando
-              frontend, backend, datos, automatización e inteligencia
-              artificial dentro de flujos reales de negocio.
-            </p>
+          <h2 class="mb-4 flex items-center gap-3 text-2xl font-semibold text-primary"><span class="material-symbols-outlined text-accent">person</span><span data-i18n="sections.profile">Perfil profesional</span></h2>
+          <div class="rounded-2xl border border-outline-variant bg-surface-container-low p-5">
+            <p class="text-sm leading-7 text-secondary" data-i18n="profile.summary">Perfil Full Stack con fortaleza en backend Node.js, SaaS multi-tenant, bases de datos relacionales y entrega de productos web. Combina desarrollo moderno con experiencia previa liderando operaciones críticas de telecomunicaciones, coordinación técnica e incidentes. Utiliza herramientas y agentes de IA en workflows reales de ingeniería para análisis de código, implementación, debugging, testing, revisión y automatización, con criterio técnico y control humano.</p>
           </div>
         </section>
 
         <section class="scroll-mt-24" id="experience">
-          <h2 class="mb-6 flex items-center gap-3 text-2xl font-semibold text-primary">
-            <span class="material-symbols-outlined text-accent">work</span>
-            <span data-i18n="sections.experience">Experiencia</span>
-          </h2>
-
-          <div class="space-y-10">
+          <h2 class="mb-6 flex items-center gap-3 text-2xl font-semibold text-primary"><span class="material-symbols-outlined text-accent">work</span><span data-i18n="sections.experience">Experiencia</span></h2>
+          <div class="space-y-8">
             <article class="avoid-break relative border-l-2 border-accent pl-6">
               <div class="absolute -left-[9px] top-1 h-4 w-4 rounded-full border-2 border-accent bg-white"></div>
-
               <div class="mb-2 flex flex-col justify-between md:flex-row md:items-center">
-                <h3 class="text-lg font-semibold text-primary">
-                  Full Stack Developer — DATAKI.CO
-                </h3>
-                <span
-                  class="mt-1 rounded bg-surface-container-low px-2 py-0.5 font-code text-xs text-secondary md:mt-0">
-                  2023 — 2026
-                </span>
+                <h3 class="text-lg font-semibold text-primary">Full Stack Developer — DATAKI.CO</h3>
+                <span class="mt-1 rounded bg-surface-container-low px-2 py-0.5 font-code text-xs text-secondary md:mt-0">2023 — 2026</span>
               </div>
-
-              <div class="mb-4 font-medium text-accent">
-                <span data-i18n="experience.dataki.subtitle">Freelance / Proyectos para marcas de gran alcance</span>
-              </div>
-
-              <ul class="ml-4 list-disc space-y-3 text-sm leading-7 text-secondary">
-                <li data-i18n="experience.dataki.b1">
-                  Desarrollo de aplicaciones web full stack para clientes
-                  internacionales, participando en el diseño de soluciones
-                  frontend/backend, consumo e integración de APIs REST.
-                </li>
-                <li data-i18n="experience.dataki.b2">
-                  Implementación de interfaces modernas con React y Angular,
-                  optimizando rendimiento, usabilidad, experiencia móvil y
-                  estabilidad en entornos de alta exigencia.
-                </li>
-                <li data-i18n="experience.dataki.b3">
-                  Mantenimiento evolutivo y correctivo de plataformas
-                  digitales, asegurando continuidad operativa, escalabilidad y
-                  cumplimiento de estándares para marcas como Oreo, Glade y
-                  Cinépolis.
-                </li>
+              <div class="mb-4 font-medium text-accent" data-i18n="experience.dataki.subtitle">Freelance / proyectos para marcas de gran alcance</div>
+              <ul class="ml-4 list-disc space-y-2 text-sm leading-7 text-secondary">
+                <li data-i18n="experience.dataki.b1">Desarrollo de aplicaciones web full stack para clientes internacionales, cubriendo interfaces, integración con APIs REST y coordinación frontend/backend.</li>
+                <li data-i18n="experience.dataki.b2">Implementación de interfaces con React y Angular, cuidando rendimiento, usabilidad, experiencia móvil y estabilidad en entornos exigentes.</li>
+                <li data-i18n="experience.dataki.b3">Mantenimiento evolutivo y correctivo de plataformas digitales para marcas como Oreo, Glade y Cinépolis, preservando continuidad operativa y estándares técnicos.</li>
               </ul>
-
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary">React</span>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary">Angular</span>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary">Node.js</span>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary">APIs REST</span>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary" data-i18n="tags.performance">Performance</span>
-              </div>
+              <div class="mt-4 flex flex-wrap gap-2 text-[10px] font-bold uppercase tracking-wider text-secondary"><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Angular</span><span>Node.js</span><span>REST APIs</span></div>
             </article>
 
             <article class="avoid-break relative border-l-2 border-outline-variant pl-6">
               <div class="absolute -left-[5px] top-1 h-2 w-2 rounded-full bg-surface-container-high"></div>
-
               <div class="mb-2 flex flex-col justify-between md:flex-row md:items-center">
-                <h3 class="text-lg font-semibold text-primary">
-                  Frontend Developer — Realty Candy
-                </h3>
-                <span
-                  class="mt-1 rounded bg-surface-container-low px-2 py-0.5 font-code text-xs text-secondary md:mt-0">
-                  2021 — 2023
-                </span>
+                <h3 class="text-lg font-semibold text-primary">Frontend Developer — Realty Candy</h3>
+                <span class="mt-1 rounded bg-surface-container-low px-2 py-0.5 font-code text-xs text-secondary md:mt-0">2021 — 2023</span>
               </div>
-
-              <div class="mb-4 font-medium text-accent">
-                <span data-i18n="experience.realty.subtitle">Mercado inmobiliario USA</span>
-              </div>
-
-              <ul class="ml-4 list-disc space-y-3 text-sm leading-7 text-secondary">
-                <li>
-                  <span data-i18n="experience.realty.b1">Desarrollo de plataformas web para el sector inmobiliario en
-                  el mercado estadounidense, utilizando WordPress y PHP con
-                  integración de IDX Broker.</span>
-                </li>
-                <li>
-                  <span data-i18n="experience.realty.b2">Implementación de funcionalidades personalizadas y
-                  optimización de rendimiento, experiencia móvil y tiempos de
-                  carga.</span>
-                </li>
-                <li>
-                  <span data-i18n="experience.realty.b3">Aplicación de estándares de accesibilidad ADA y mantenimiento
-                  evolutivo/correctivo, asegurando estabilidad y continuidad
-                  operativa.</span>
-                </li>
+              <div class="mb-4 font-medium text-accent" data-i18n="experience.realty.subtitle">Mercado inmobiliario USA</div>
+              <ul class="ml-4 list-disc space-y-2 text-sm leading-7 text-secondary">
+                <li data-i18n="experience.realty.b1">Desarrollo de plataformas web para real estate en el mercado estadounidense con WordPress, PHP e integración de IDX Broker.</li>
+                <li data-i18n="experience.realty.b2">Implementación de funcionalidades personalizadas y optimización de rendimiento, tiempos de carga y experiencia móvil.</li>
+                <li data-i18n="experience.realty.b3">Aplicación de estándares ADA y mantenimiento evolutivo/correctivo para sostener estabilidad y continuidad operativa.</li>
               </ul>
-
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary">WordPress</span>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary">PHP</span>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary">IDX Broker</span>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary">ADA</span>
-              </div>
+              <div class="mt-4 flex flex-wrap gap-2 text-[10px] font-bold uppercase tracking-wider text-secondary"><span>WordPress</span><span>PHP</span><span>JavaScript</span><span>IDX Broker</span><span>ADA</span></div>
             </article>
 
             <article class="avoid-break relative border-l-2 border-outline-variant pl-6">
               <div class="absolute -left-[5px] top-1 h-2 w-2 rounded-full bg-surface-container-high"></div>
-
               <div class="mb-2 flex flex-col justify-between md:flex-row md:items-center">
-                <h3 class="text-lg font-semibold text-primary">
-                  WordPress / Frontend Developer — Nonadesign &amp; BH Software
-                </h3>
-                <span
-                  class="mt-1 rounded bg-surface-container-low px-2 py-0.5 font-code text-xs text-secondary md:mt-0">
-                  2019 — 2020
-                </span>
+                <h3 class="text-lg font-semibold text-primary">WordPress / Frontend Developer — Nonadesign &amp; BH Software</h3>
+                <span class="mt-1 rounded bg-surface-container-low px-2 py-0.5 font-code text-xs text-secondary md:mt-0">2019 — 2020</span>
               </div>
-
-              <div class="mb-4 font-medium text-accent">
-                <span data-i18n="experience.nonadesign.subtitle">Desarrollo web freelance y a medida</span>
-              </div>
-
-              <ul class="ml-4 list-disc space-y-3 text-sm leading-7 text-secondary">
-                <li>
-                  <span data-i18n="experience.nonadesign.b1">Personalización de themes WordPress, integraciones en PHP y
-                  desarrollo responsive con Sass, Flexbox, Grid y Bootstrap.</span>
-                </li>
-                <li>
-                  <span data-i18n="experience.nonadesign.b2">Consumo y creación de APIs REST en Node.js y PHP, con soporte
-                  sobre bases de datos MySQL.</span>
-                </li>
-                <li>
-                  <span data-i18n="experience.nonadesign.b3">Trabajo colaborativo con Git y desarrollo de componentes
-                  interactivos con JavaScript y React.</span>
-                </li>
+              <div class="mb-4 font-medium text-accent" data-i18n="experience.nonadesign.subtitle">Desarrollo web freelance y a medida</div>
+              <ul class="ml-4 list-disc space-y-2 text-sm leading-7 text-secondary">
+                <li data-i18n="experience.nonadesign.b1">Personalización de themes WordPress, integraciones PHP y desarrollo responsive con Sass, Flexbox, Grid y Bootstrap.</li>
+                <li data-i18n="experience.nonadesign.b2">Consumo y creación de APIs REST en Node.js y PHP, con soporte sobre bases de datos MySQL.</li>
+                <li data-i18n="experience.nonadesign.b3">Desarrollo de componentes interactivos con JavaScript y React, trabajando con control de versiones Git.</li>
               </ul>
-
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary">PHP</span>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary">Node.js</span>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary">MySQL</span>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary">WordPress</span>
-              </div>
+              <div class="mt-4 flex flex-wrap gap-2 text-[10px] font-bold uppercase tracking-wider text-secondary"><span>JavaScript</span><span>React</span><span>Node.js</span><span>PHP</span><span>MySQL</span><span>Git</span></div>
             </article>
 
             <article class="avoid-break relative border-l-2 border-outline-variant pl-6">
               <div class="absolute -left-[5px] top-1 h-2 w-2 rounded-full bg-surface-container-high"></div>
-
               <div class="mb-2 flex flex-col justify-between md:flex-row md:items-center">
-                <h3 class="text-lg font-semibold text-primary">
-                  Gerente Regional de Operaciones — MOVILNET
-                </h3>
-                <span
-                  class="mt-1 rounded bg-surface-container-low px-2 py-0.5 font-code text-xs text-secondary md:mt-0">
-                  1993 — 2018
-                </span>
+                <h3 class="text-lg font-semibold text-primary">Gerente Regional de Operaciones — MOVILNET</h3>
+                <span class="mt-1 rounded bg-surface-container-low px-2 py-0.5 font-code text-xs text-secondary md:mt-0">1993 — 2018</span>
               </div>
-
-              <div class="mb-4 font-medium text-accent">
-                <span data-i18n="experience.movilnet.subtitle">Operaciones regionales en telecomunicaciones</span>
-              </div>
-
-              <ul class="ml-4 list-disc space-y-3 text-sm leading-7 text-secondary">
-                <li>
-                  <span data-i18n="experience.movilnet.b1">Gestión integral de recursos y coordinación de equipos
-                  técnicos, asegurando continuidad operativa en entornos de
-                  alta exigencia y gran escala.</span>
-                </li>
-                <li>
-                  <span data-i18n="experience.movilnet.b2">Dirección de proyectos estratégicos, definiendo prioridades,
-                  planes de ejecución e indicadores orientados a calidad,
-                  eficiencia y rendimiento.</span>
-                </li>
-                <li>
-                  <span data-i18n="experience.movilnet.b3">Supervisión de equipos multidisciplinarios e implementación
-                  de mejoras operativas para aumentar productividad y
-                  confiabilidad de servicio.</span>
-                </li>
-                <li>
-                  <span data-i18n="experience.movilnet.b4">Optimización de procesos, recursos humanos y recursos
-                  técnicos en estrategias de mantenimiento preventivo,
-                  correctivo y predictivo en redes.</span>
-                </li>
+              <div class="mb-4 font-medium text-accent" data-i18n="experience.movilnet.subtitle">Operaciones regionales en telecomunicaciones</div>
+              <ul class="ml-4 list-disc space-y-2 text-sm leading-7 text-secondary">
+                <li data-i18n="experience.movilnet.b1">Coordinación de equipos técnicos y recursos para asegurar continuidad operativa en sistemas de telecomunicaciones críticos.</li>
+                <li data-i18n="experience.movilnet.b2">Dirección de proyectos, prioridades operativas, planes de ejecución e indicadores de calidad, eficiencia y rendimiento.</li>
+                <li data-i18n="experience.movilnet.b3">Gestión de incidentes, mantenimiento preventivo/correctivo/predictivo y mejoras de procesos para confiabilidad del servicio.</li>
               </ul>
-
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary" data-i18n="tags.leadership">Liderazgo</span>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary" data-i18n="tags.operations">Gestión operativa</span>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary">Telecomunicaciones</span>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-secondary" data-i18n="tags.continuous">Mejora continua</span>
-              </div>
+              <div class="mt-4 flex flex-wrap gap-2 text-[10px] font-bold uppercase tracking-wider text-secondary"><span data-i18n="tags.leadership">Liderazgo</span><span data-i18n="tags.operations">Operaciones críticas</span><span>Telecomunicaciones</span><span data-i18n="tags.incidents">Incidentes</span></div>
             </article>
           </div>
         </section>
 
         <section class="scroll-mt-24" id="projects">
-          <h2 class="mb-6 flex items-center gap-3 text-2xl font-semibold text-primary">
-            <span class="material-symbols-outlined text-accent">deployed_code</span>
-            <span data-i18n="sections.projects">Proyectos destacados</span>
-          </h2>
-
-          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            <article
-              class="avoid-break rounded-xl border border-outline-variant p-5 transition-colors hover:border-accent">
-              <h3 class="mb-2 text-lg font-semibold text-primary">
-                <span data-i18n="projects.buildingos.title">BuildingOS — SaaS multi-tenant para condominios</span>
-              </h3>
-
-              <p class="mb-4 text-sm leading-7 text-secondary" data-i18n="projects.buildingos.desc">
-                Plataforma SaaS multi-tenant para administración de edificios, unidades,
-                pagos, comunicaciones y usuarios. Diseño de arquitectura backend modular
-                con PostgreSQL/Prisma, control de permisos por rol, aislamiento de datos
-                por tenant e integración de un asistente IA para consultas y flujos operativos.
-              </p>
-
-              <div class="flex flex-wrap gap-3">
-                <span class="font-code text-[11px] text-accent">Next.js</span>
-                <span class="font-code text-[11px] text-accent">NestJS</span>
-                <span class="font-code text-[11px] text-accent">PostgreSQL</span>
-                <span class="font-code text-[11px] text-accent">Prisma</span>
-                <span class="font-code text-[11px] text-accent">Docker</span>
-                <span class="font-code text-[11px] text-accent">IA</span>
-              </div>
+          <h2 class="mb-6 flex items-center gap-3 text-2xl font-semibold text-primary"><span class="material-symbols-outlined text-accent">deployed_code</span><span data-i18n="sections.projects">Proyectos destacados</span></h2>
+          <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            <article class="avoid-break rounded-xl border border-outline-variant p-5 transition-colors hover:border-accent">
+              <h3 class="mb-2 text-lg font-semibold text-primary" data-i18n="projects.buildingos.title">BuildingOS — SaaS multi-tenant en pre-producción</h3>
+              <p class="mb-3 text-sm leading-7 text-secondary" data-i18n="projects.buildingos.desc">Plataforma SaaS multi-tenant para gestión de usuarios, unidades, pagos y operaciones del edificio, en etapa final previa a salida a producción. Trabajo sobre arquitectura con Next.js, NestJS, Node.js, TypeScript, PostgreSQL, Prisma, Redis y Docker, incluyendo APIs, módulos de negocio, roles/permisos, aislamiento de datos, almacenamiento, staging, despliegues y CI/CD.</p>
+              <p class="mb-4 text-sm leading-6 text-secondary"><span data-i18n="projects.buildingos.linkLabel">Preview público:</span> <a class="font-medium text-accent hover:underline" href="https://buildingos.31-220-98-21.sslip.io/" target="_blank" rel="noopener">buildingos.31-220-98-21.sslip.io</a></p>
+              <div class="flex flex-wrap gap-3 font-code text-[11px] text-accent"><span>Next.js</span><span>NestJS</span><span>Node.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Prisma</span><span>Redis</span><span>Docker</span><span>SaaS</span></div>
             </article>
 
-            <article
-              class="avoid-break rounded-xl border border-outline-variant p-5 transition-colors hover:border-accent">
-              <h3 class="mb-2 text-lg font-semibold text-primary">
-                AI SEO Tools
-              </h3>
-
-              <p class="mb-4 text-sm leading-7 text-secondary" data-i18n="projects.aiseo.desc">
-                Suite de herramientas SEO con IA, incluyendo renombrador
-                inteligente de imágenes, generación de títulos y descripciones,
-                automatizaciones y módulos para análisis y productividad.
-              </p>
-
-              <div class="flex flex-wrap gap-3">
-                <span class="font-code text-[11px] text-accent">React</span>
-                <span class="font-code text-[11px] text-accent">Node.js</span>
-                <span class="font-code text-[11px] text-accent">OpenAI</span>
-                <span class="font-code text-[11px] text-accent">n8n</span>
-                <span class="font-code text-[11px] text-accent" data-i18n="tags.automation">Automatización</span>
-              </div>
+            <article class="avoid-break rounded-xl border border-outline-variant p-5 transition-colors hover:border-accent">
+              <h3 class="mb-2 text-lg font-semibold text-primary">JurisManager</h3>
+              <p class="mb-4 text-sm leading-7 text-secondary" data-i18n="projects.juris.desc">Plataforma SaaS de gestión jurídica desarrollada con React, TypeScript, Node.js, Express, PostgreSQL y Prisma. Refuerza experiencia full stack con backend, APIs REST, modelado de datos y producto SaaS.</p>
+              <div class="flex flex-wrap gap-3 font-code text-[11px] text-accent"><span>React</span><span>TypeScript</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>Prisma</span><span>REST APIs</span></div>
             </article>
+
+            <article class="avoid-break rounded-xl border border-outline-variant p-5 transition-colors hover:border-accent">
+              <h3 class="mb-2 text-lg font-semibold text-primary">AI SEO / Apps Marketing</h3>
+              <p class="mb-4 text-sm leading-7 text-secondary" data-i18n="projects.aiseo.desc">Herramientas y automatizaciones para marketing/SEO con Node.js, APIs, OpenAI, LLMs y n8n: generación de contenido, renombrado inteligente de imágenes y flujos de productividad.</p>
+              <div class="flex flex-wrap gap-3 font-code text-[11px] text-accent"><span>Node.js</span><span>OpenAI</span><span>LLMs</span><span>n8n</span><span data-i18n="tags.automation">Automatización</span><span>APIs</span></div>
+            </article>
+
           </div>
         </section>
 
-        <section class="scroll-mt-24" id="education">
-          <h2 class="mb-6 flex items-center gap-3 text-2xl font-semibold text-primary">
-            <span class="material-symbols-outlined text-accent">school</span>
-            <span data-i18n="sections.education">Educación</span>
-          </h2>
-
-          <div class="space-y-6">
-            <article class="flex flex-col justify-between md:flex-row">
-              <div>
-                <h3 class="text-lg font-semibold text-primary">
-                  <span data-i18n="education.degree1">Ingeniero en Electrónica</span>
-                </h3>
-                <div class="text-secondary">
-                  Instituto Universitario Politécnico Santiago Mariño
-                </div>
-              </div>
-              <span class="mt-1 font-code text-xs text-secondary md:mt-0">
-                2003 — 2007
-              </span>
-            </article>
-
-            <article class="flex flex-col justify-between md:flex-row">
-              <div>
-                <h3 class="text-lg font-semibold text-primary">
-                  <span data-i18n="education.degree2">Técnico Superior en Electricidad</span>
-                </h3>
-                <div class="text-secondary">
-                  Instituto Universitario Isaac Newton
-                </div>
-              </div>
-              <span class="mt-1 font-code text-xs text-secondary md:mt-0">
-                1990 — 1993
-              </span>
-            </article>
-
-            <div class="border-l-4 border-outline-variant bg-surface-container-low p-4">
-              <p class="text-sm italic text-secondary" data-i18n="education.note">
-                Formación complementaria en liderazgo, gestión de equipos,
-                resolución de conflictos y project management.
-              </p>
-            </div>
-          </div>
-        </section>
       </div>
     </div>
   </main>
 
   <footer class="mt-16 w-full border-t border-outline-variant bg-surface-container-low no-print">
-    <div class="mx-auto flex max-w-[900px] flex-col items-center justify-between gap-4 px-6 py-12 md:flex-row">
-      <p class="text-sm font-medium text-secondary">
-        <span data-i18n="footer.copy">© 2026 Yoryi Abreu. CV profesional.</span>
-      </p>
-
+    <div class="mx-auto flex max-w-[960px] flex-col items-center justify-between gap-4 px-6 py-10 md:flex-row">
+      <p class="text-sm font-medium text-secondary" data-i18n="footer.copy">© 2026 Yoryi Abreu. CV profesional.</p>
       <div class="flex gap-6">
-        <a class="text-secondary transition-colors hover:text-accent"
-          href="https://www.linkedin.com/in/yoryi-abreu-92999216b/" target="_blank" rel="noopener">
-          LinkedIn
-        </a>
-        <a class="text-secondary transition-colors hover:text-accent" href="https://github.com/yabreu65"
-          target="_blank" rel="noopener">
-          GitHub
-        </a>
-        <a class="text-secondary transition-colors hover:text-accent" href="mailto:yoryiabreu@gmail.com">
-          Email
-        </a>
+        <a class="text-secondary transition-colors hover:text-accent" href="https://www.linkedin.com/in/yoryi-abreu-92999216b/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="text-secondary transition-colors hover:text-accent" href="https://github.com/yabreu65" target="_blank" rel="noopener">GitHub</a>
+        <a class="text-secondary transition-colors hover:text-accent" href="mailto:yoryiabreu@gmail.com">Email</a>
       </div>
     </div>
   </footer>
@@ -628,134 +344,120 @@
   <script>
     const translations = {
       es: {
-        "meta.title": "Yoryi Abreu Portillo | CV",
-        "meta.description": "CV de Yoryi Abreu Portillo, Full Stack Developer con foco en backend, arquitectura SaaS e integración de IA.",
+        "meta.title": "Yoryi Abreu Portillo | Full Stack Developer Node.js, JavaScript/TypeScript, Python, SaaS & AI-Assisted Development",
+        "meta.description": "CV de Yoryi Abreu Portillo, Full Stack Developer con JavaScript, TypeScript, Node.js, Python, PostgreSQL, SaaS e integración de IA.",
         "nav.experience": "Experiencia",
         "nav.skills": "Skills",
         "nav.projects": "Proyectos",
         "nav.education": "Educación",
         "actions.downloadPdf": "Descargar PDF",
-        "hero.title": "Full Stack Developer | Backend, SaaS Multi-Tenant & AI Integration",
-        "hero.summary": "Desarrollador Full Stack con foco en backend, arquitectura SaaS e integración de inteligencia artificial en productos reales. Trabajo con Node.js, Next.js, React, TypeScript, PostgreSQL, Python y Docker, construyendo APIs, servicios backend y plataformas multi-tenant. Actualmente desarrollo BuildingOS, una plataforma SaaS donde diseño módulos de negocio, estructura de datos, permisos, aislamiento multi-tenant e integración de asistentes IA dentro del flujo del producto.",
+        "hero.kicker": "Full Stack · Backend · SaaS · Ingeniería con IA",
+        "hero.title": "Full Stack Developer | Node.js, JavaScript/TypeScript, Python, SaaS & AI-Assisted Development",
+        "hero.summary": "Ingeniero en Electrónica y Full Stack Developer enfocado en JavaScript, TypeScript, Node.js, backend, PostgreSQL y plataformas SaaS. Construyo APIs REST, módulos de negocio, interfaces web y flujos con IA; uso Python de forma práctica para automatización, scripting, procesamiento y tareas relacionadas con IA.",
         "sections.contact": "Contacto",
-        "sections.stack": "Stack principal",
-        "sections.competencies": "Competencias clave",
+        "sections.skills": "Skills técnicos",
         "sections.languages": "Idiomas",
-        "sections.educationCerts": "Educación y certificaciones",
-        "sections.profile": "Perfil",
+        "sections.education": "Educación",
+        "sections.profile": "Perfil profesional",
         "sections.experience": "Experiencia",
         "sections.projects": "Proyectos destacados",
-        "sections.education": "Educación",
-        "competencies.1": "Arquitectura SaaS multi-tenant, APIs REST y sistemas escalables.",
-        "competencies.2": "Backend con Node.js/NestJS, Prisma y PostgreSQL.",
-        "competencies.3": "Diseño de módulos, permisos, roles y aislamiento de datos.",
-        "competencies.4": "Integración de IA con LLMs, asistentes y automatización.",
-        "competencies.5": "DevOps práctico con Docker, Nginx, PM2 y DigitalOcean; actualmente profundizando AWS/ECS-Fargate.",
-        "competencies.6": "Optimización de rendimiento web, UX y mantenimiento evolutivo.",
-        "competencies.7": "Liderazgo técnico, gestión operativa y trabajo con equipos.",
+        "skills.languages.title": "Lenguajes",
+        "skills.backend.title": "Backend",
+        "skills.frontend.title": "Frontend",
+        "skills.data.title": "Datos",
+        "skills.devops.title": "DevOps e infraestructura",
+        "skills.ai.title": "AI & Automation",
         "languages.spanish": "Español — Nativo",
         "languages.english": "Inglés — Técnico básico / lectura de documentación",
-        "education.complementary": "Formación complementaria",
-        "profile.summary": "Desarrollador Full Stack con enfoque backend y visión de producto. Combino experiencia en desarrollo web, arquitectura SaaS multi-tenant, integración de IA y liderazgo operativo en entornos críticos. Me especializo en construir soluciones mantenibles, modulares y orientadas a resultados, conectando frontend, backend, datos, automatización e inteligencia artificial dentro de flujos reales de negocio.",
-        "experience.dataki.subtitle": "Freelance / Proyectos para marcas de gran alcance",
-        "experience.realty.subtitle": "Mercado inmobiliario USA",
-        "experience.nonadesign.subtitle": "Desarrollo web freelance y a medida",
-        "experience.movilnet.subtitle": "Operaciones regionales en telecomunicaciones",
-        "experience.dataki.b1": "Desarrollo de aplicaciones web full stack para clientes internacionales, participando en el diseño de soluciones frontend/backend, consumo e integración de APIs REST.",
-        "experience.dataki.b2": "Implementación de interfaces modernas con React y Angular, optimizando rendimiento, usabilidad, experiencia móvil y estabilidad en entornos de alta exigencia.",
-        "experience.dataki.b3": "Mantenimiento evolutivo y correctivo de plataformas digitales, asegurando continuidad operativa, escalabilidad y cumplimiento de estándares para marcas como Oreo, Glade y Cinépolis.",
-        "projects.buildingos.title": "BuildingOS — SaaS multi-tenant para condominios",
-        "projects.buildingos.desc": "Plataforma SaaS multi-tenant para administración de edificios, unidades, pagos, comunicaciones y usuarios. Diseño de arquitectura backend modular con PostgreSQL/Prisma, control de permisos por rol, aislamiento de datos por tenant e integración de un asistente IA para consultas y flujos operativos.",
-        "projects.aiseo.desc": "Suite de herramientas SEO con IA, incluyendo renombrador inteligente de imágenes, generación de títulos y descripciones, automatizaciones y módulos para análisis y productividad.",
-        "education.note": "Formación complementaria en liderazgo, gestión de equipos, resolución de conflictos y project management.",
-        "tags.performance": "Performance",
-        "tags.leadership": "Liderazgo",
-        "tags.operations": "Gestión operativa",
-        "tags.continuous": "Mejora continua",
-        "tags.automation": "Automatización",
-        "footer.copy": "© 2026 Yoryi Abreu. CV profesional.",
         "education.degree1": "Ingeniero en Electrónica",
         "education.degree2": "Técnico Superior en Electricidad",
-        "education.cert1": "Project Management — MADI Consulting",
-        "education.cert2": "Gestión de Calidad Supervisoria — MADI Consulting",
-        "education.cert3": "Conciliación de Conflictos — MADI Consulting",
-        "education.cert4": "Asertividad en los Negocios — Gerencia Corporativa de Formación CANTV",
-        "education.cert5": "Taller de Liderazgo — Organización Scheiner, Ferrera & As.",
-        "experience.realty.b1": "Desarrollo de plataformas web para el sector inmobiliario en el mercado estadounidense, utilizando WordPress y PHP con integración de IDX Broker.",
-        "experience.realty.b2": "Implementación de funcionalidades personalizadas y optimización de rendimiento, experiencia móvil y tiempos de carga.",
-        "experience.realty.b3": "Aplicación de estándares de accesibilidad ADA y mantenimiento evolutivo/correctivo, asegurando estabilidad y continuidad operativa.",
-        "experience.nonadesign.b1": "Personalización de themes WordPress, integraciones en PHP y desarrollo responsive con Sass, Flexbox, Grid y Bootstrap.",
+        "education.complementary": "Formación complementaria",
+        "education.note": "Project Management y gestión de calidad supervisoria — MADI Consulting; conciliación de conflictos — MADI Consulting; asertividad en los negocios — Gerencia Corporativa de Formación CANTV; liderazgo — Organización Scheiner, Ferrera & As.",
+        "profile.summary": "Perfil Full Stack con fortaleza en backend Node.js, SaaS multi-tenant, bases de datos relacionales y entrega de productos web. Combina desarrollo moderno con experiencia previa liderando operaciones críticas de telecomunicaciones, coordinación técnica e incidentes. Utiliza herramientas y agentes de IA en workflows reales de ingeniería para análisis de código, implementación, debugging, testing, revisión y automatización, con criterio técnico y control humano.",
+        "experience.dataki.subtitle": "Freelance / proyectos para marcas de gran alcance",
+        "experience.dataki.b1": "Desarrollo de aplicaciones web full stack para clientes internacionales, cubriendo interfaces, integración con APIs REST y coordinación frontend/backend.",
+        "experience.dataki.b2": "Implementación de interfaces con React y Angular, cuidando rendimiento, usabilidad, experiencia móvil y estabilidad en entornos exigentes.",
+        "experience.dataki.b3": "Mantenimiento evolutivo y correctivo de plataformas digitales para marcas como Oreo, Glade y Cinépolis, preservando continuidad operativa y estándares técnicos.",
+        "experience.realty.subtitle": "Mercado inmobiliario USA",
+        "experience.realty.b1": "Desarrollo de plataformas web para real estate en el mercado estadounidense con WordPress, PHP e integración de IDX Broker.",
+        "experience.realty.b2": "Implementación de funcionalidades personalizadas y optimización de rendimiento, tiempos de carga y experiencia móvil.",
+        "experience.realty.b3": "Aplicación de estándares ADA y mantenimiento evolutivo/correctivo para sostener estabilidad y continuidad operativa.",
+        "experience.nonadesign.subtitle": "Desarrollo web freelance y a medida",
+        "experience.nonadesign.b1": "Personalización de themes WordPress, integraciones PHP y desarrollo responsive con Sass, Flexbox, Grid y Bootstrap.",
         "experience.nonadesign.b2": "Consumo y creación de APIs REST en Node.js y PHP, con soporte sobre bases de datos MySQL.",
-        "experience.nonadesign.b3": "Trabajo colaborativo con Git y desarrollo de componentes interactivos con JavaScript y React.",
-        "experience.movilnet.b1": "Gestión integral de recursos y coordinación de equipos técnicos, asegurando continuidad operativa en entornos de alta exigencia y gran escala.",
-        "experience.movilnet.b2": "Dirección de proyectos estratégicos, definiendo prioridades, planes de ejecución e indicadores orientados a calidad, eficiencia y rendimiento.",
-        "experience.movilnet.b3": "Supervisión de equipos multidisciplinarios e implementación de mejoras operativas para aumentar productividad y confiabilidad de servicio.",
-        "experience.movilnet.b4": "Optimización de procesos, recursos humanos y recursos técnicos en estrategias de mantenimiento preventivo, correctivo y predictivo en redes.",
+        "experience.nonadesign.b3": "Desarrollo de componentes interactivos con JavaScript y React, trabajando con control de versiones Git.",
+        "experience.movilnet.subtitle": "Operaciones regionales en telecomunicaciones",
+        "experience.movilnet.b1": "Coordinación de equipos técnicos y recursos para asegurar continuidad operativa en sistemas de telecomunicaciones críticos.",
+        "experience.movilnet.b2": "Dirección de proyectos, prioridades operativas, planes de ejecución e indicadores de calidad, eficiencia y rendimiento.",
+        "experience.movilnet.b3": "Gestión de incidentes, mantenimiento preventivo/correctivo/predictivo y mejoras de procesos para confiabilidad del servicio.",
+        "projects.buildingos.title": "BuildingOS — SaaS multi-tenant en pre-producción",
+        "projects.buildingos.desc": "Plataforma SaaS multi-tenant para gestión de usuarios, unidades, pagos y operaciones del edificio, en etapa final previa a salida a producción. Trabajo sobre arquitectura con Next.js, NestJS, Node.js, TypeScript, PostgreSQL, Prisma, Redis y Docker, incluyendo APIs, módulos de negocio, roles/permisos, aislamiento de datos, almacenamiento, staging, despliegues y CI/CD.",
+        "projects.buildingos.linkLabel": "Preview público:",
+        "projects.juris.desc": "Plataforma SaaS de gestión jurídica desarrollada con React, TypeScript, Node.js, Express, PostgreSQL y Prisma. Refuerza experiencia full stack con backend, APIs REST, modelado de datos y producto SaaS.",
+        "projects.aiseo.desc": "Herramientas y automatizaciones para marketing/SEO con Node.js, APIs, OpenAI, LLMs y n8n: generación de contenido, renombrado inteligente de imágenes y flujos de productividad.",
+        "tags.leadership": "Liderazgo",
+        "tags.operations": "Operaciones críticas",
+        "tags.incidents": "Incidentes",
+        "tags.automation": "Automatización",
+        "footer.copy": "© 2026 Yoryi Abreu. CV profesional."
       },
       en: {
-        "meta.title": "Yoryi Abreu Portillo | Resume",
-        "meta.description": "Resume of Yoryi Abreu Portillo, Full Stack Developer focused on backend, SaaS architecture, and AI integration.",
+        "meta.title": "Yoryi Abreu Portillo | Full Stack Developer Node.js, JavaScript/TypeScript, Python, SaaS & AI-Assisted Development",
+        "meta.description": "Resume of Yoryi Abreu Portillo, Full Stack Developer with JavaScript, TypeScript, Node.js, Python, PostgreSQL, SaaS, and AI integration.",
         "nav.experience": "Experience",
         "nav.skills": "Skills",
         "nav.projects": "Projects",
         "nav.education": "Education",
         "actions.downloadPdf": "Download PDF",
-        "hero.title": "Full Stack Developer | Backend, Multi-Tenant SaaS & AI Integration",
-        "hero.summary": "Full Stack Developer focused on backend, SaaS architecture, and artificial intelligence integration in real products. I work with Node.js, Next.js, React, TypeScript, PostgreSQL, Python, and Docker, building APIs, backend services, and multi-tenant platforms. I am currently developing BuildingOS, a SaaS platform where I design business modules, data structures, permissions, multi-tenant isolation, and AI assistant integration within the product workflow.",
+        "hero.kicker": "Full Stack · Backend · SaaS · AI-enabled engineering",
+        "hero.title": "Full Stack Developer | Node.js, JavaScript/TypeScript, Python, SaaS & AI-Assisted Development",
+        "hero.summary": "Electronics Engineer and Full Stack Developer focused on JavaScript, TypeScript, Node.js, backend, PostgreSQL, and SaaS platforms. I build REST APIs, business modules, web interfaces, and AI-enabled workflows; I use Python practically for automation, scripting, processing, and AI-related tasks.",
         "sections.contact": "Contact",
-        "sections.stack": "Core Stack",
-        "sections.competencies": "Key Competencies",
+        "sections.skills": "Technical Skills",
         "sections.languages": "Languages",
-        "sections.educationCerts": "Education & Certifications",
-        "sections.profile": "Profile",
+        "sections.education": "Education",
+        "sections.profile": "Professional Profile",
         "sections.experience": "Experience",
         "sections.projects": "Featured Projects",
-        "sections.education": "Education",
-        "competencies.1": "Multi-tenant SaaS architecture, REST APIs, and scalable systems.",
-        "competencies.2": "Backend development with Node.js/NestJS, Prisma, and PostgreSQL.",
-        "competencies.3": "Module design, permissions, roles, and data isolation.",
-        "competencies.4": "AI integration with LLMs, assistants, and automation workflows.",
-        "competencies.5": "Practical DevOps with Docker, Nginx, PM2, and DigitalOcean; currently deepening AWS/ECS-Fargate.",
-        "competencies.6": "Web performance optimization, UX, and continuous platform maintenance.",
-        "competencies.7": "Technical leadership, operations management, and teamwork.",
+        "skills.languages.title": "Languages",
+        "skills.backend.title": "Backend",
+        "skills.frontend.title": "Frontend",
+        "skills.data.title": "Data",
+        "skills.devops.title": "DevOps & infrastructure",
+        "skills.ai.title": "AI & Automation",
         "languages.spanish": "Spanish — Native",
         "languages.english": "English — Basic technical level / documentation reading",
-        "education.complementary": "Complementary Education",
-        "profile.summary": "Full Stack Developer with a backend focus and product mindset. I combine web development, multi-tenant SaaS architecture, AI integration, and operational leadership in critical environments. I specialize in building maintainable, modular, results-oriented solutions that connect frontend, backend, data, automation, and artificial intelligence within real business workflows.",
-        "experience.dataki.subtitle": "Freelance / Projects for high-reach brands",
-        "experience.realty.subtitle": "US real estate market",
-        "experience.nonadesign.subtitle": "Freelance and custom web development",
-        "experience.movilnet.subtitle": "Regional telecommunications operations",
-        "experience.dataki.b1": "Full stack web application development for international clients, participating in frontend/backend solution design, REST API consumption, and integration.",
-        "experience.dataki.b2": "Implementation of modern interfaces with React and Angular, optimizing performance, usability, mobile experience, and stability in demanding environments.",
-        "experience.dataki.b3": "Evolutionary and corrective maintenance of digital platforms, ensuring operational continuity, scalability, and standards compliance for brands such as Oreo, Glade, and Cinépolis.",
-        "projects.buildingos.title": "BuildingOS — Multi-Tenant SaaS for Property Management",
-        "projects.buildingos.desc": "Multi-tenant SaaS platform for managing buildings, units, payments, communications, and users. Backend modular architecture design with PostgreSQL/Prisma, role-based permissions, tenant data isolation, and AI assistant integration for queries and operational workflows.",
-        "projects.aiseo.desc": "AI-powered SEO tools suite, including intelligent image renaming, title and description generation, automation workflows, and modules for analysis and productivity.",
-        "education.note": "Complementary training in leadership, team management, conflict resolution, and project management.",
-        "tags.performance": "Performance",
-        "tags.leadership": "Leadership",
-        "tags.operations": "Operations Management",
-        "tags.continuous": "Continuous Improvement",
-        "tags.automation": "Automation",
-        "footer.copy": "© 2026 Yoryi Abreu. Professional resume.",
         "education.degree1": "Electronics Engineer",
         "education.degree2": "Higher Technician in Electricity",
-        "education.cert1": "Project Management — MADI Consulting",
-        "education.cert2": "Supervisory Quality Management — MADI Consulting",
-        "education.cert3": "Conflict Resolution — MADI Consulting",
-        "education.cert4": "Business Assertiveness — Corporate Training Management CANTV",
-        "education.cert5": "Leadership Workshop — Organización Scheiner, Ferrera & As.",
-        "experience.realty.b1": "Web platform development for the real estate sector in the US market, using WordPress and PHP with IDX Broker integration.",
-        "experience.realty.b2": "Implementation of custom features and optimization of performance, mobile experience, and loading times.",
-        "experience.realty.b3": "Application of ADA accessibility standards and evolutionary/corrective maintenance, ensuring stability and operational continuity.",
+        "education.complementary": "Complementary training",
+        "education.note": "Project management and supervisory quality management — MADI Consulting; conflict resolution — MADI Consulting; business assertiveness — Corporate Training Management CANTV; leadership — Organización Scheiner, Ferrera & As.",
+        "profile.summary": "Full Stack profile with strength in Node.js backend, multi-tenant SaaS, relational databases, and web product delivery. Combines modern software development with previous experience leading critical telecommunications operations, technical coordination, and incident response. Uses AI tools and coding agents within real engineering workflows for code analysis, implementation, debugging, testing, review, and automation, with technical judgment and human control.",
+        "experience.dataki.subtitle": "Freelance / projects for high-reach brands",
+        "experience.dataki.b1": "Full stack web application development for international clients, covering interfaces, REST API integration, and frontend/backend coordination.",
+        "experience.dataki.b2": "Implementation of interfaces with React and Angular, improving performance, usability, mobile experience, and stability in demanding environments.",
+        "experience.dataki.b3": "Evolutionary and corrective maintenance of digital platforms for brands such as Oreo, Glade, and Cinépolis, preserving operational continuity and technical standards.",
+        "experience.realty.subtitle": "US real estate market",
+        "experience.realty.b1": "Development of real estate web platforms for the US market using WordPress, PHP, and IDX Broker integration.",
+        "experience.realty.b2": "Implementation of custom features and optimization of performance, load times, and mobile experience.",
+        "experience.realty.b3": "Application of ADA standards and evolutionary/corrective maintenance to sustain stability and operational continuity.",
+        "experience.nonadesign.subtitle": "Freelance and custom web development",
         "experience.nonadesign.b1": "WordPress theme customization, PHP integrations, and responsive development with Sass, Flexbox, Grid, and Bootstrap.",
         "experience.nonadesign.b2": "Consumption and creation of REST APIs in Node.js and PHP, with support over MySQL databases.",
-        "experience.nonadesign.b3": "Collaborative work with Git and development of interactive components with JavaScript and React.",
-        "experience.movilnet.b1": "Comprehensive resource management and coordination of technical teams, ensuring operational continuity in high-demand and large-scale environments.",
-        "experience.movilnet.b2": "Leadership of strategic projects, defining priorities, execution plans, and indicators focused on quality, efficiency, and performance.",
-        "experience.movilnet.b3": "Supervision of multidisciplinary teams and implementation of operational improvements to increase productivity and service reliability.",
-        "experience.movilnet.b4": "Optimization of processes, human resources, and technical resources through preventive, corrective, and predictive network maintenance strategies.",
+        "experience.nonadesign.b3": "Development of interactive components with JavaScript and React, using Git for version control.",
+        "experience.movilnet.subtitle": "Regional telecommunications operations",
+        "experience.movilnet.b1": "Coordination of technical teams and resources to ensure operational continuity in critical telecommunications systems.",
+        "experience.movilnet.b2": "Leadership of projects, operational priorities, execution plans, and quality, efficiency, and performance indicators.",
+        "experience.movilnet.b3": "Incident management, preventive/corrective/predictive maintenance, and process improvements for service reliability.",
+        "projects.buildingos.title": "BuildingOS — Multi-tenant SaaS in pre-production",
+        "projects.buildingos.desc": "Multi-tenant SaaS platform for managing users, units, payments, and building operations, in the final stage before production release. Work covers architecture with Next.js, NestJS, Node.js, TypeScript, PostgreSQL, Prisma, Redis, and Docker, including APIs, business modules, roles/permissions, data isolation, storage, staging, deployments, and CI/CD.",
+        "projects.buildingos.linkLabel": "Public preview:",
+        "projects.juris.desc": "Legal management SaaS platform built with React, TypeScript, Node.js, Express, PostgreSQL, and Prisma. Reinforces full stack experience with backend, REST APIs, data modeling, and SaaS product delivery.",
+        "projects.aiseo.desc": "Marketing/SEO tools and automations with Node.js, APIs, OpenAI, LLMs, and n8n: content generation, intelligent image renaming, and productivity workflows.",
+        "tags.leadership": "Leadership",
+        "tags.operations": "Critical operations",
+        "tags.incidents": "Incidents",
+        "tags.automation": "Automation",
+        "footer.copy": "© 2026 Yoryi Abreu. Professional resume."
       }
     };
 
@@ -767,6 +469,16 @@
       document.title = t["meta.title"];
       const metaDescription = document.getElementById("meta-description");
       if (metaDescription) metaDescription.setAttribute("content", t["meta.description"]);
+
+      const mainNav = document.getElementById("main-nav");
+      if (mainNav) {
+        mainNav.setAttribute("aria-label", selectedLanguage === "es" ? "Navegación principal" : "Main navigation");
+      }
+
+      const profileLogo = document.getElementById("profile-logo");
+      if (profileLogo) {
+        profileLogo.setAttribute("alt", selectedLanguage === "es" ? "Logo de Yoryi Abreu" : "Yoryi Abreu logo");
+      }
 
       document.querySelectorAll("[data-i18n]").forEach((element) => {
         const key = element.getAttribute("data-i18n");
@@ -781,9 +493,7 @@
         toggleButton.textContent = selectedLanguage === "es" ? "EN" : "ES";
         toggleButton.setAttribute(
           "aria-label",
-          selectedLanguage === "es"
-            ? "Cambiar idioma a inglés"
-            : "Switch language to Spanish"
+          selectedLanguage === "es" ? "Cambiar idioma a inglés" : "Switch language to Spanish"
         );
       }
     }
@@ -796,20 +506,17 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      const initialLanguage = getInitialLanguage();
-      setLanguage(initialLanguage);
+      setLanguage(getInitialLanguage());
 
       const toggleButton = document.getElementById("language-toggle");
       if (toggleButton) {
         toggleButton.addEventListener("click", () => {
           const currentLanguage = document.documentElement.lang === "es" ? "es" : "en";
-          const nextLanguage = currentLanguage === "es" ? "en" : "es";
-          setLanguage(nextLanguage);
+          setLanguage(currentLanguage === "es" ? "en" : "es");
         });
       }
     });
   </script>
-
 </body>
 
 </html>
